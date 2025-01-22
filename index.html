@@ -1,39 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>底部样式示例</title>
-<style>
-  /* 设置底部样式 */
-  footer {
-    background-color: silver; /* 银灰色背景 */
-    padding: 20px; /* 内边距 */
-    text-align: center; /* 文本居中 */
-    margin-top: 20px; /* 与上方内容的外边距 */
-  }
-
-  /* 设置圆角框样式 */
-  .rounded-box {
-    border: 1px solid #ccc; /* 边框颜色 */
-    border-radius: 10px; /* 圆角大小 */
-    padding: 10px; /* 内边距 */
-    background-color: white; /* 背景颜色 */
-    max-width: 300px; /* 最大宽度 */
-    margin: 0 auto; /* 水平居中 */
-  }
-</style>
-</head>
-<body>
-
-<!-- 网站内容 -->
-
-<!-- 网站底部 -->
-<footer>
-  <div class="rounded-box">
-    <p>这里是底部文本内容，放置在一个圆角框中。</p>
+<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+  <div class="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+    <div class="mx-auto max-w-md pt-8 text-base font-size-5 font-semibold leading-7">
+      <p class="text-gray-900 text-3xl">Alexander CX Li:</p>
+      <div class="divide-y divide-gray-300/50">
+        <p>__________________________________________________</p>
+        
+        <div class="pt-8 text-base font-semibold leading-7">
+          <p class="text-gray-900">Readme</p>
+          <p>
+            <a class="text-sky-500">This is the Personal Website for Alexander CX Li (still on preparing);</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
 
-</body>
-</html>
+   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm">
+    <div class="mx-auto max-w-md">
+      <div class="divide-y divide-gray-300/50">
+        <div class="pt-4 text-base font-semibold leading-7">
+          <p class="text-gray-900">Introduction & Curriculum Vitae</p>
+          <p>__________________________________________________</p>
+        </div>
+        <div class="pt-8 text-base font-semibold leading-7">
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Education &rarr;</a>
+              </p>
+            </li>
+            <p>2019-2023 South China Normal University</p>
+            <p>2023-now University of Chinese Academy of Science</p>
+
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Skills &rarr;</a>
+              </p>
+            </li>
+            <p>R & Jamovi</p>
+            <p>SPSS</p>
+            <p>Python</p>
+            <p>Matlab</p>
+
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Others &rarr;</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm">
+    <div class="mx-auto max-w-md">
+      <div class="divide-y divide-gray-300/50">
+        <div class="pt-4 text-base font-semibold leading-7">
+          <p class="text-gray-900">Publications & Research Items</p>
+          <p>__________________________________________________</p>
+        </div>
+        <div class="pt-8 text-base font-semibold leading-7">
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Article &rarr;</a>
+              </p>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Conference &rarr;</a>
+              </p>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a class="text-gray-900 hover:text-sky-600">Preprint &rarr;</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm">
+    <div class="mx-auto max-w-md">
+      <div class="divide-y divide-gray-300/50">
+        <div class="pt-4 text-base font-semibold leading-7">
+          <p class="text-gray-900">Websites & Social Links</p>
+          <p>__________________________________________________</p>
+        </div>
+        <div class="pt-8 text-base font-semibold leading-7">
+          <ul class="space-y-4">
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a href="https://orcid.org/0000-0003-0113-0686" class="text-sky-500 hover:text-sky-600">ORCID &rarr;</a>
+              </p>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a href="https://www.researchgate.net/profile/Chenxi-Li-67" class="text-sky-500 hover:text-sky-600">Research Gate &rarr;</a>
+              </p>
+            </li>
+            <li class="flex items-center">
+              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+              <p class="ml-4">
+                <a href="https://www.zhihu.com/people/axrl-83" class="text-sky-500 hover:text-sky-600">Zhihu &rarr;</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
