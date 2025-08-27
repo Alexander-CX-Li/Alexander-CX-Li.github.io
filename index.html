@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
-<!--第4至第1210行为tailwindCSS生成的CSS代码，放置于前，1212至1830行为正式代码-->
+<!--第4至第1210行为tailwindCSS生成的CSS代码，放置于前，之后为正式代码-->
 
 
 <style type="text/css">
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -21,13 +21,12 @@
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-md: 28rem;
-    --container-lg: 32rem;
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-semibold: 600;
+    --leading-relaxed: 1.625;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
@@ -166,6 +165,9 @@
   ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
   :-moz-ui-invalid {
     box-shadow: none;
   }
@@ -189,11 +191,14 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
-  .mx-auto {
-    margin-inline: auto;
+  .mx-10 {
+    margin-inline: calc(var(--spacing) * 10);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -207,14 +212,23 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1\/3 {
+    width: calc(1/3 * 100%);
+  }
+  .w-2\/3 {
+    width: calc(2/3 * 100%);
+  }
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
   .w-30 {
     width: calc(var(--spacing) * 30);
   }
-  .max-w-md {
-    max-width: var(--container-md);
+  .w-\[750px\] {
+    width: 750px;
+  }
+  .w-\[1200px\] {
+    width: 1200px;
   }
   .flex-none {
     flex: none;
@@ -233,6 +247,13 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .divide-y {
@@ -254,6 +275,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
   }
   .rounded-md {
     border-radius: var(--radius-md);
@@ -285,11 +309,23 @@
   .stroke-2 {
     stroke-width: 2;
   }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+  }
+  .pt-2 {
+    padding-top: calc(var(--spacing) * 2);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
@@ -303,6 +339,9 @@
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
   }
+  .text-justify {
+    text-align: justify;
+  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -315,6 +354,10 @@
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
   }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -324,6 +367,9 @@
   }
   .text-sky-500 {
     color: var(--color-sky-500);
+  }
+  .italic {
+    font-style: italic;
   }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -351,14 +397,14 @@
       margin-inline: auto;
     }
   }
-  .sm\:max-w-lg {
-    @media (width >= 40rem) {
-      max-width: var(--container-lg);
-    }
-  }
   .sm\:rounded-lg {
     @media (width >= 40rem) {
       border-radius: var(--radius-lg);
+    }
+  }
+  .sm\:px-2 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 2);
     }
   }
   .sm\:px-10 {
@@ -485,186 +531,261 @@
     }
   }
 }
-
-
 </style>
 
 
+<!-- 最外层：横向 flex，占满全宽 -->
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
   <div class="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10  mb-4">
-    <div class="mx-auto max-w-md pt-8 text-base font-size-5 font-semibold leading-7">
-      <p class="text-gray-900 text-3xl">Alexander CX Li:</p>
+  <div class="relative bg-white px-10 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[1200px] sm:rounded-lg sm:px-10  mb-8">
+    <div class="mx-10 pt-8 text-base font-size-5 font-semibold leading-7">
+      <p class="flex items-center justify-center text-gray-900 text-3xl">Alexander CX Li</p>
       <div class="divide-y divide-gray-300/50">
-        <p>__________________________________________________</p>
+        <p> </p>
         
         <div class="pt-8 text-base font-semibold leading-7">
           <p class="text-gray-900">Readme</p>
           <p>
-            <a class="text-sky-500">This is the Personal Website for Alexander CX Li (still on preparing);</a>
+            <a class="text-sky-500">This is the Personal Website for Alexander CX Li</a>
           </p>
         </div>
       </div>
     </div>
   </div>
 
-   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm mb-4">
-    <div class="mx-auto max-w-md">
-      <div class="divide-y divide-gray-300/50">
-        <div class="pt-4 text-base font-semibold leading-7">
-          <p class="text-gray-900">Introduction & Curriculum Vitae</p>
-          <p>__________________________________________________</p>
+  <div class="flex bg-white px-2 pt-2 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[1200px] sm:rounded-lg sm:px-2  mb-8">
+    <!-- 左侧栏：1/3 宽，高度随内容增长 -->
+    <aside class="w-1/3 bg-white p-6">
+      <div class="bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Chenxi Li</p>
+          </div>
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a  class="text-sky-500 hover:text-sky-600">Location</a>
+                </p>
+              </li>
+              <p class=" px-6 text-gray-900">Beijing, China</p>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-sky-500 hover:text-sky-600">Email</a>
+                  <p class=" px-2 text-sky-500">(AT = @)</p>
+                </p>
+              </li>
+              <p class=" px-6 text-gray-900">alexander_cx_li(AT)163.com</p>
+            </ul>
+          </div>
         </div>
-        <div class="pt-8 text-base font-semibold leading-7">
-          <ul class="space-y-4">
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Education &rarr;</a>
-              </p>
-                <li class="flex items-center">
-                  <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                    <span>2023-now</span>
-                  </div>
-                  
-                </li>
-                <p>Institute of Psychology, Chinese Academy of Science</p>
-                <p>Major: General Psychology</p>
-                <li class="flex items-center">
-                  <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                    <span>2019-2023</span>
-                  </div>
-                </li>
-                <p>School of Psychology, South China Normal University</p>
-                <p>Major: Psychology (Base class)</p>            
+      </div>
+      <!-- 这里放你原来的「Websites & Social Links」整块 -->
+      <div class="bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Websites & Social Links</p>
+          </div>
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a href="https://orcid.org/0000-0003-0113-0686" class="text-sky-500 hover:text-sky-600">ORCID &rarr;</a>
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a href="https://www.researchgate.net/profile/Chenxi-Li-67" class="text-sky-500 hover:text-sky-600">Research Gate &rarr;</a>
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a href="https://www.zhihu.com/people/axrl-83" class="text-sky-500 hover:text-sky-600">Zhihu &rarr;</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Skills &rarr;</a>
-              </p>
-            </li>
-                <li class="flex items-center">
-                  <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                    <span>Experiment</span>
-                  </div>
-                </li>
-            <p>E.Prime</p>
-            <p>Psychopy</p>
-            <p>EyeTracker</p>
-                <li class="flex items-center">
-                  <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                    <span>Statistics</span>
-                  </div>
-                </li>
-            <p>R & Jamovi</p>
-            <p>SPSS</p>
-            <p>Python</p>
-            <p>Matlab</p>
-
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Others &rarr;</a>
-              </p>
-            </li>
-          </ul>
+    </aside>
+    <!-- 右侧栏：2/3 宽，可再放若干子栏 -->
+    <main class="w-2/3 p-6 space-y-6">
+      <!-- 按需继续添加 -->
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Introduction & Curriculum Vitae</p>
+            <p> </p>
+          </div>
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Education &rarr;</a>
+                </p>
+                  <li class="flex items-center">
+                    <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
+                      <span>2023-now</span>
+                    </div>
+                    
+                  </li>
+                  <p class=" px-6 text-gray-900">Institute of Psychology, Chinese Academy of Science</p>
+                  <p class=" px-6 text-gray-900">Major: General Psychology</p>
+                  <li class="flex items-center">
+                    <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
+                      <span>2019-2023</span>
+                    </div>
+                  </li>
+                  <p class=" px-6 text-gray-900">School of Psychology, South China Normal University</p>
+                  <p class=" px-6 text-gray-900">Major: Psychology (Base class)</p>            
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm  mb-4">
-    <div class="mx-auto max-w-md">
-      <div class="divide-y divide-gray-300/50">
-        <div class="pt-4 text-base font-semibold leading-7">
-          <p class="text-gray-900">Publications & Research Items</p>
-          <p>__________________________________________________</p>
-        </div>
-        <div class="pt-8 text-base font-semibold leading-7">
-          <ul class="space-y-4">
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Journal article &rarr;</a>
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Conference paper &rarr;</a>
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a class="text-gray-900 hover:text-sky-600">Under review & Preprint &rarr;</a>
-              </p>
-            </li>
-          </ul>
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm  mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Publications & Research Items</p>
+            <p> </p>
+          </div>
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Under review & Preprint &rarr;</a>
+                </p>
+              </li>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., Huang, L., & Li, X. (under review). The Effect of Arousal Information on Chinese Word Segmentation. <ita  class="italic">Psychonomic Bulletin & Review</ita> </P>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Huang, L., Li, C., & Li, X. (under review). A Database of Overlapping Ambiguous Strings in Chinese Reading. <ita  class="italic">Behavior Research Methods</ita> </P>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., & Li, X. (Accepted). Exploring: somewhat obscure scientific knowledge. <ita  class="italic">On the psychological role of the spread of "internet memes"</ita>. Science Press. </P>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Journal article &rarr;</a>
+                </p>
+              </li>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Huang, L., Zhang, W., Chen, Z., Li, C., & Li, X. (2025). The Historical Origins of Large Language Models and Psychology. <ita  class="italic">Journal of Psychological Science</ita>, 48(4),773-781.<a href="https://doi.org/10.16719/j.cnki.1671-6981.20250401" class="text-sky-500 hover:text-sky-600"> DOI</a></P>
+
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Jiang, L., Lu, A., Lin, Y., Liu, S., Li, J., Song, T., Li, C., Huang, X., Wang, X., Luo, J., Ye, L., Jian, Y., Zhong, W. (2023). Fear of missing out as a mediator and social capital as a moderator of the relationship between the narcissism and the social media use among adolescents.  <ita  class="italic">Psihologija</ita>, 56(4), 451-474.<a href="https://doi.org/10.2298/PSI211212024J" class="text-sky-500 hover:text-sky-600"> DOI</a</P>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Conference paper &rarr;</a>
+                </p>
+              </li>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., & Li, X. (2025). <ita  class="italic">The Role of Phonologically Mediated Pathways when Processing Chinese Compound Words during Sentence Reading</ita> [Oral presentation]. The 10th China International Conference on Eye Movements (CICEM), Xinxiang, Henan, China. </P>
+              <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., Huang, L., & Li, X. (2025). <ita  class="italic">The Effect of Arousal Information on Chinese Word Segmentation.</ita> [Poster presentation]. The 19th International Conference on the Processing of East Asian Language (ICPEAL), Guangzhou, Guangdong, China. </P>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Other publication</a>
+                </p>
+              </li>
+
+
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-   <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 sm  mb-4">
-    <div class="mx-auto max-w-md">
-      <div class="divide-y divide-gray-300/50">
-        <div class="pt-4 text-base font-semibold leading-7">
-          <p class="text-gray-900">Websites & Social Links</p>
-          <p>__________________________________________________</p>
-        </div>
-        <div class="pt-8 text-base font-semibold leading-7">
-          <ul class="space-y-4">
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a href="https://orcid.org/0000-0003-0113-0686" class="text-sky-500 hover:text-sky-600">ORCID &rarr;</a>
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a href="https://www.researchgate.net/profile/Chenxi-Li-67" class="text-sky-500 hover:text-sky-600">Research Gate &rarr;</a>
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                <a href="https://www.zhihu.com/people/axrl-83" class="text-sky-500 hover:text-sky-600">Zhihu &rarr;</a>
-              </p>
-            </li>
-          </ul>
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Skills</p>
+          </div>
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Experiment</a>
+                </p>                
+              </li>
+              <p>E.Prime</p>
+              <p>Psychopy</p>
+              <p>EyeTracker</p>        
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Statistics</a>
+                </p>
+              </li>
+              <p>R & Jamovi</p>
+              <p>SPSS</p>
+              <p>Python</p>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">Others</a>
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+
+    </main>
   </div>
 </div>
 
