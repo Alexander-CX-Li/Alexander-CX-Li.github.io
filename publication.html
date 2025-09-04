@@ -4,6 +4,7 @@
 
 
 <style type="text/css">
+
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
@@ -28,6 +29,7 @@
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-semibold: 600;
+    --leading-relaxed: 1.625;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
@@ -248,9 +250,6 @@
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
-  }
   .w-\[750px\] {
     width: 750px;
   }
@@ -318,9 +317,6 @@
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .bg-gray-300 {
-    background-color: var(--color-gray-300);
-  }
   .bg-sky-600 {
     background-color: var(--color-sky-600);
   }
@@ -387,6 +383,9 @@
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
   }
+  .text-justify {
+    text-align: justify;
+  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -398,6 +397,10 @@
   .leading-7 {
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
+  }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -414,6 +417,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .italic {
+    font-style: italic;
   }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -587,8 +593,8 @@
     }
   }
 }
-</style>
 
+</style>
 
 <!-- 最外层：横向 flex，占满全宽 -->
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
@@ -611,7 +617,8 @@
 
 <div class="flex justify-around items-center bg-white px-10 pt-6 pb-6 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[1200px] sm:rounded-lg sm:px-10  mb-6 ">
   <!-- Home -->
-  <a href="http://Alexander-CX-Li.github.io/index.html" class="relative z-10 flex items-center bg-sky-600 rounded-md px-3 py-2 text-white hover:bg-sky-700 transition-colors">
+
+  <a href="http://Alexander-CX-Li.github.io/index.html" class="relative z-10 flex items-center bg-white rounded-md px-3 py-2 text-black hover:bg-sky-700 transition-colors">
     <!-- 图标 -->
     <div class="w-12 h-12">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
@@ -636,7 +643,7 @@
   </a>
 
   <!-- Research -->
-  <a href="http://Alexander-CX-Li.github.io/publication.html" class="relative z-10 flex items-center bg-white rounded-md px-3 py-2 text-black hover:bg-sky-700 transition-colors">
+  <a href="http://Alexander-CX-Li.github.io/publication.html" class="relative z-10 flex items-center bg-sky-600 rounded-md px-3 py-2 text-white hover:bg-sky-700 transition-colors">
     <!-- 图标 -->
     <div class="w-12 h-12">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
@@ -669,11 +676,11 @@
       <div class="w-8 h-8">
         <!-- 这里放你的图标，示例用 Heroicons 的 home -->
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
       </svg>
       </div>
       <p class="ml-4">
-        <a class="text-gray-900 hover:text-sky-600">Home</a>
+        <a class="text-gray-900 hover:text-sky-600">Publication</a>
       </p>
     </li>
     </div>
@@ -722,9 +729,10 @@
       <div class="mx-10">
         <div class="divide-y divide-gray-300/50">
           <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Introduction & Curriculum Vitae</p>
+            <p class="text-gray-900">Under review & Preprint</p>
             <p> </p>
           </div>
+
           <div class="pt-8 text-base font-semibold leading-7">
             <ul class="space-y-4">
               <li class="flex items-center">
@@ -733,25 +741,37 @@
                   <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
                 </svg>
                 <p class="ml-4">
-                  <a class="text-gray-900 hover:text-sky-600">Education &rarr;</a>
-                </p>
-                  <li class="flex items-center">
-                    <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                      <span>2023-now</span>
-                    </div>
-                    
-                  </li>
-                  <p class=" px-6 text-gray-900">Institute of Psychology, Chinese Academy of Science</p>
-                  <p class=" px-6 text-gray-900">Major: General Psychology</p>
-                  <li class="flex items-center">
-                    <div class="w-30 h-6 bg-gray-300 rounded-md flex items-center justify-center">
-                      <span>2019-2023</span>
-                    </div>
-                  </li>
-                  <p class=" px-6 text-gray-900">School of Psychology, South China Normal University</p>
-                  <p class=" px-6 text-gray-900">Major: Psychology (Base class)</p>            
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., Huang, L., & Li, X. (under review). The Effect of Arousal Information on Chinese Word Segmentation. <ita  class="italic">Psychonomic Bulletin & Review</ita> </P>
+                </p>         
             </ul>
           </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Huang, L., Li, C., & Li, X. (under review). A Database of Overlapping Ambiguous Strings in Chinese Reading. <ita  class="italic">Behavior Research Methods</ita> </P>
+                </p>         
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., & Li, X. (accepted). Exploring: somewhat obscure scientific knowledge. <ita  class="italic">On the psychological role of the spread of "internet memes"</ita>. Science Press. </P>
+                </p>         
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
@@ -760,7 +780,83 @@
       <div class="mx-10">
         <div class="divide-y divide-gray-300/50">
           <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Websites & Social Links</p>
+            <p class="text-gray-900">Journal Paper</p>
+            <p> </p>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Huang, L., Zhang, W., Chen, Z., Li, C., & Li, X. (2025). The Historical Origins of Large Language Models and Psychology. <ita  class="italic">Journal of Psychological Science</ita>, 48(4),773-781.<a href="https://doi.org/10.16719/j.cnki.1671-6981.20250401" class="text-sky-500 hover:text-sky-600"> DOI</a></P>
+                </p>         
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Jiang, L., Lu, A., Lin, Y., Liu, S., Li, J., Song, T., Li, C., Huang, X., Wang, X., Luo, J., Ye, L., Jian, Y., Zhong, W. (2023). Fear of missing out as a mediator and social capital as a moderator of the relationship between the narcissism and the social media use among adolescents.  <ita  class="italic">Psihologija</ita>, 56(4), 451-474.<a href="https://doi.org/10.2298/PSI211212024J" class="text-sky-500 hover:text-sky-600"> DOI</a></P>
+                </p>         
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Conference Paper</p>
+            <p> </p>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., & Li, X. (2025). <ita  class="italic">The Role of Phonologically Mediated Pathways when Processing Chinese Compound Words during Sentence Reading</ita> [Oral presentation]. The 10th China International Conference on Eye Movements (CICEM), Xinxiang, Henan, China. </P>
+                </p>         
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <P class="text-justify leading-relaxed" style="text-indent: -1.5em; padding-left: 1.5em;">Li, C., Huang, L., & Li, X. (2025). <ita  class="italic">The Effect of Arousal Information on Chinese Word Segmentation.</ita> [Poster presentation]. The 19th International Conference on the Processing of East Asian Language (ICPEAL), Guangzhou, Guangdong, China. </P>
+                </p>         
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="text-gray-900">Other</p>
           </div>
           <div class="pt-8 text-base font-semibold leading-7">
             <ul class="space-y-4">
@@ -770,36 +866,18 @@
                   <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
                 </svg>
                 <p class="ml-4">
-                  <a href="https://orcid.org/0000-0003-0113-0686" class="text-sky-500 hover:text-sky-600">ORCID &rarr;</a>
-                </p>               
-              </li>
-              
-              <li class="flex items-center">
-                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="11" />
-                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                </svg>
-                <p class="ml-4">
-                  <a href="https://www.researchgate.net/profile/Chenxi-Li-67" class="text-sky-500 hover:text-sky-600">Research Gate &rarr;</a>
+                  <a class="text-gray-900 hover:text-sky-600">......</a>
                 </p>                
               </li>
 
-                            <li class="flex items-center">
-                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="11" />
-                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                </svg>
-                <p class="ml-4">
-                  <a href="https://www.zhihu.com/people/axrl-83" class="text-sky-500 hover:text-sky-600">Zhihu &rarr;</a>
-                </p>                
-              </li>     
             </ul>
           </div>
         </div>
       </div>
     </div>
-    
+
     </main>
   </div>
 </div>
+
 </html>
