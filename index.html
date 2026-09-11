@@ -2,15 +2,13 @@
 <html>
 <!--第4至第1210行为tailwindCSS生成的CSS代码，放置于前，1212至1830行为正式代码-->
 
-
-<style type="text/css">
-/*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-sky-100: oklch(95.1% 0.026 236.824);
@@ -28,6 +26,7 @@
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
@@ -47,7 +46,7 @@
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
@@ -99,7 +98,7 @@
     border-color: inherit;
     border-collapse: collapse;
   }
-  :-moz-focusring {
+  :-moz-focusring:where(:not(iframe)) {
     outline: auto;
   }
   progress {
@@ -192,7 +191,7 @@
     position: relative;
   }
   .inset-0 {
-    inset: calc(var(--spacing) * 0);
+    inset: 0px;
   }
   .z-10 {
     z-index: 10;
@@ -218,6 +217,10 @@
   .flex {
     display: flex;
   }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -234,10 +237,10 @@
     min-height: 100vh;
   }
   .w-1\/3 {
-    width: calc(1/3 * 100%);
+    width: calc(1 / 3 * 100%);
   }
   .w-2\/3 {
-    width: calc(2/3 * 100%);
+    width: calc(2 / 3 * 100%);
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -275,35 +278,27 @@
   .justify-center {
     justify-content: center;
   }
-  .space-y-4 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
-  .space-y-6 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
+  :where(.space-y-6 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
-  .divide-y {
-    :where(& > :not(:last-child)) {
-      --tw-divide-y-reverse: 0;
-      border-bottom-style: var(--tw-border-style);
-      border-top-style: var(--tw-border-style);
-      border-top-width: calc(1px * var(--tw-divide-y-reverse));
-      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    }
+  :where(.divide-y > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-bottom-style: var(--tw-border-style);
+    border-top-style: var(--tw-border-style);
+    border-top-width: calc(1px * var(--tw-divide-y-reverse));
+    border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   }
-  .divide-gray-300\/50 {
-    :where(& > :not(:last-child)) {
-      border-color: color-mix(in srgb, oklch(87.2% 0.01 258.338) 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        border-color: color-mix(in oklab, var(--color-gray-300) 50%, transparent);
-      }
+  :where(.divide-gray-300\/50 > :not(:last-child)) {
+    border-color: color-mix(in srgb, oklch(87.2% 0.01 258.338) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-gray-300) 50%, transparent);
     }
   }
   .overflow-hidden {
@@ -320,6 +315,9 @@
   }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
+  }
+  .bg-sky-500 {
+    background-color: var(--color-sky-500);
   }
   .bg-sky-600 {
     background-color: var(--color-sky-600);
@@ -338,6 +336,9 @@
   }
   .fill-sky-100 {
     fill: var(--color-sky-100);
+  }
+  .fill-sky-500 {
+    fill: var(--color-sky-500);
   }
   .stroke-sky-500 {
     stroke: var(--color-sky-500);
@@ -359,6 +360,9 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -387,6 +391,9 @@
   .pb-8 {
     padding-bottom: calc(var(--spacing) * 8);
   }
+  .text-center {
+    text-align: center;
+  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -398,6 +405,10 @@
   .leading-7 {
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -434,42 +445,28 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .hover\:bg-sky-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-sky-700);
-      }
+  @media (hover: hover) {
+    .hover\:bg-sky-700:hover {
+      background-color: var(--color-sky-700);
+    }
+    .hover\:text-sky-600:hover {
+      color: var(--color-sky-600);
     }
   }
-  .hover\:text-sky-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-sky-600);
-      }
-    }
-  }
-  .sm\:mx-auto {
-    @media (width >= 40rem) {
+  @media (width >= 40rem) {
+    .sm\:mx-auto {
       margin-inline: auto;
     }
-  }
-  .sm\:rounded-lg {
-    @media (width >= 40rem) {
+    .sm\:rounded-lg {
       border-radius: var(--radius-lg);
     }
-  }
-  .sm\:px-2 {
-    @media (width >= 40rem) {
+    .sm\:px-2 {
       padding-inline: calc(var(--spacing) * 2);
     }
-  }
-  .sm\:px-10 {
-    @media (width >= 40rem) {
+    .sm\:px-10 {
       padding-inline: calc(var(--spacing) * 10);
     }
-  }
-  .sm\:py-12 {
-    @media (width >= 40rem) {
+    .sm\:py-12 {
       padding-block: calc(var(--spacing) * 12);
     }
   }
@@ -587,6 +584,7 @@
     }
   }
 }
+
 </style>
 
 <!-- 最外层：横向 flex，占满全宽 -->
@@ -680,16 +678,18 @@
 
       <div class="bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">
         <div class="divide-y divide-gray-300/50">
-          <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Chenxi Li</p>
+          <div class="pt-4 text-center text-base font-semibold leading-7">
+            <p class="text-gray-900">李晨曦 ｜ Chenxi LI</p>
           </div>
           <div class="pt-8 text-base font-semibold leading-7">
             <ul class="space-y-4">
               <li class="flex items-center">
-                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
-                  <circle cx="12" cy="12" r="11" />
-                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-sky-500">
+                  <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+                  <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clip-rule="evenodd" />
+                  <path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" />
                 </svg>
+
                 <p class="ml-4">
                   <a  class="text-sky-500 hover:text-sky-600">Location</a>
                 </p>
@@ -697,16 +697,28 @@
               <p class=" px-6 text-gray-900">Hong Kong SAR, China</p>
 
               <li class="flex items-center">
-                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2">
-                  <circle cx="12" cy="12" r="11" />
-                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-sky-500">
+                  <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                  <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                 </svg>
+
                 <p class="ml-4">
-                  <a class="text-sky-500 hover:text-sky-600">Email</a>
-                  <p class=" px-2 text-sky-500">(AT = @)</p>
+                  <a class="text-sky-500 hover:text-sky-600">Email (AT = @)</a>
                 </p>
               </li>
               <p class=" px-6 text-gray-900">alexander_cx_li(AT)163.com</p>
+
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-sky-500">
+                  <path fill-rule="evenodd" d="M9 2.25a.75.75 0 0 1 .75.75v1.506a49.384 49.384 0 0 1 5.343.371.75.75 0 1 1-.186 1.489c-.66-.083-1.323-.151-1.99-.206a18.67 18.67 0 0 1-2.97 6.323c.318.384.65.753 1 1.107a.75.75 0 0 1-1.07 1.052A18.902 18.902 0 0 1 9 13.687a18.823 18.823 0 0 1-5.656 4.482.75.75 0 0 1-.688-1.333 17.323 17.323 0 0 0 5.396-4.353A18.72 18.72 0 0 1 5.89 8.598a.75.75 0 0 1 1.388-.568A17.21 17.21 0 0 0 9 11.224a17.168 17.168 0 0 0 2.391-5.165 48.04 48.04 0 0 0-8.298.307.75.75 0 0 1-.186-1.489 49.159 49.159 0 0 1 5.343-.371V3A.75.75 0 0 1 9 2.25ZM15.75 9a.75.75 0 0 1 .68.433l5.25 11.25a.75.75 0 1 1-1.36.634l-1.198-2.567h-6.744l-1.198 2.567a.75.75 0 0 1-1.36-.634l5.25-11.25A.75.75 0 0 1 15.75 9Zm-2.672 8.25h5.344l-2.672-5.726-2.672 5.726Z" clip-rule="evenodd" />
+                </svg>
+
+                <p class="ml-4">
+                  <a class="text-sky-500 hover:text-sky-600">Languages</a>
+                </p>
+              </li>
+              <p class=" px-6 text-gray-900">Chinese(Putonghua), English</p>
+
             </ul>
           </div>
         </div>
@@ -721,9 +733,9 @@
       <div class="mx-10">
         <div class="divide-y divide-gray-300/50">
           <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Curriculum Vitae</p>
-            <p> </p>
+            <p class="rounded-md bg-sky-500 px-3 py-1 font-bold text-white">Curriculum Vitae</p>
           </div>
+
           <div class="pt-8 text-base font-semibold leading-7">
             <ul class="space-y-4">
               <li class="flex items-center">
@@ -745,9 +757,9 @@
     <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
       <div class="mx-10">
         <div class="divide-y divide-gray-300/50">
+
           <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Education</p>
-            <p> </p>
+            <p class="rounded-md bg-sky-500 px-3 py-1 font-bold text-white">Education</p>
           </div>
 
           <div class="pt-8 text-base font-semibold leading-7">
@@ -826,9 +838,116 @@
     <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
       <div class="mx-10">
         <div class="divide-y divide-gray-300/50">
+
           <div class="pt-4 text-base font-semibold leading-7">
-            <p class="text-gray-900">Websites & Social Links</p>
+            <p class="rounded-md bg-sky-500 px-3 py-1 font-bold text-white">Work Experience & Extracurricular Experience</p>
           </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">202309-202506 &rarr; Science Communication Volunteer (Part time)</a>
+                </p>
+
+                <li class="flex items-center">
+                  <p class=" px-6 text-gray-900">Beijing,China - University of Chinese Academy of Sciences(Vernal Equinox Project)</p>
+                </li>
+
+              <li class="flex items-center">
+                <div class="text-base font-semibold px-6">
+                  <p class="rounded-md bg-gray-300 px-3 py-1 text-black"> - Participated in teaching in remote areas of Beijing, writing articles for science communication, and the revision of psychology-related Baidu entries.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">202307-202308 &rarr; Assistant Instructor (Part time)</a>
+                </p>
+
+                <li class="flex items-center">
+                  <p class=" px-6 text-gray-900">Shenzhen,China - Mast Stem Academy</p>
+                </li>
+
+              <li class="flex items-center">
+                <div class="text-base font-semibold px-6">
+                  <p class="rounded-md bg-gray-300 px-3 py-1 text-black"> - Working with the foreign teachers to teach STEM classes in English (assisting the foreign teachers, preparing the lesson materials and teaching in the classroom)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">202209-202212 &rarr; Assistant Psychology Teacher (Part time)</a>
+                </p>
+
+                <li class="flex items-center">
+                  <p class=" px-6 text-gray-900">Guangzhou,China - Longkouxi Primary School</p>
+                </li>
+
+              <li class="flex items-center">
+                <div class="text-base font-semibold px-6">
+                  <p class="rounded-md bg-gray-300 px-3 py-1 text-black"> - Working as a mental health teacher (teaching mental health course, assisting in the management of campus mailbox and radio (for mental health), assisting head teacher)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8 text-base font-semibold leading-7">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a class="text-gray-900 hover:text-sky-600">201909-202106 &rarr; Member of Organization Department (Part time)</a>
+                </p>
+
+                <li class="flex items-center">
+                  <p class=" px-6 text-gray-900">Guangzhou,China - The School of Psychology, South China Normal University (The Communist Youth League)</p>
+                </li>
+
+              <li class="flex items-center">
+                <div class="text-base font-semibold px-6">
+                  <p class="rounded-md bg-gray-300 px-3 py-1 text-black"> - Worked as assistant (2019.09-2020.5) and director (2020.06-2021.5) of Organization Department of the Communist Youth League. Participated and leading the department in in member recruitment, education and management, awards and recognition.</p>
+
+                  <p class="rounded-md bg-gray-300 px-3 py-1 text-black"> - Participated as a team member of Volunteer Teaching Team in the Communist Youth League (2020.08 & 2021.07). Participated in summer teaching and social research in remote areas of Guangdong Province.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="relative bg-white px-6 pt-4 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto w-[750px] sm:rounded-lg sm:px-10 sm mb-4">
+      <div class="mx-10">
+        <div class="divide-y divide-gray-300/50">
+
+          <div class="pt-4 text-base font-semibold leading-7">
+            <p class="rounded-md bg-sky-500 px-3 py-1 font-bold text-white">Websites & Social Links</p>
+          </div>
+
           <div class="pt-8 text-base font-semibold leading-7">
             <ul class="space-y-4">
               <li class="flex items-center">
@@ -851,7 +970,7 @@
                 </p>                
               </li>
 
-                            <li class="flex items-center">
+              <li class="flex items-center">
                 <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="11" />
                   <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
@@ -859,7 +978,18 @@
                 <p class="ml-4">
                   <a href="https://www.zhihu.com/people/axrl-83" class="text-sky-500 hover:text-sky-600">Zhihu &rarr;</a>
                 </p>                
-              </li>     
+              </li>
+
+              <li class="flex items-center">
+                <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+                <p class="ml-4">
+                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=RgNfwHwAAAAJ" class="text-sky-500 hover:text-sky-600">Google Scholar &rarr;</a>
+                </p>                
+              </li>              
+
             </ul>
           </div>
         </div>
